@@ -84,19 +84,19 @@ int main(int argc, char **argv)
 
   while(1) {
     //green
-    send_byte(0b00010100);
+    send_byte(0b100001);
     usleep(200*1000);
 
     //yellow
-    send_byte(0b00001010);
+    send_byte(0b010010);
     usleep(200*1000);
 
     //red
-    send_byte(0b00100001);
+    send_byte(0b001100);
     usleep(200*1000); 
 
     //yellow
-    send_byte(0b00001010);
+    send_byte(0b010010);
     usleep(200*1000);
   }
 
