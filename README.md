@@ -1,10 +1,10 @@
 Raspberry Pi raw register access experiments with the [Cordwood soldering puzzle](https://boldport.com/shop/cordwood-puzzle-1)
 
-| folders     | device | description |
-|-------------|--------|-------------|
-| blink       |rasp pi | Rotates through green, yellow, red LEDs|
-| shift       |rasp pi | Same functionality as blink.c but using a 74HC595 shift register |
-| temperature |attiny85|  Writes temperature data from a DHT22 to the cordwood LEDs via a 74HC595 shift register |
+| folders     | simulation | device | description |
+|-------------|------------|--------|-------------|
+| blink       | N/A        |rasp pi | Rotates through green, yellow, red LEDs|
+| shift       | N/A        |rasp pi | Same functionality as blink.c but using a 74HC595 shift register |
+| temperature | [<img src='https://kennedn.com/blog/posts/snowdon/wokwi_badge.svg'/>](https://wokwi.com/projects/359204276534882305)  |attiny85|  Writes temperature data from a DHT22 to the cordwood LEDs via a 74HC595 shift register |
 
 ![](./media/cordwood.gif)
 
