@@ -9,11 +9,15 @@
 #define LATCH_PIN PB1
 #define CLOCK_PIN PB2
 
-uint16_t temperature, humidity;
+uint16_t temperature = 0;
+uint16_t humidity = 0;
+
 
 #define round(x) ((x)>=0?(long)((x)+0.5):(long)((x)-0.5))
 
 void read_dht() {
+  uint16_t _temperature;
+  uint16_t _humidity;
   uint32_t startTime;
   uint16_t data;
 
@@ -30,6 +34,7 @@ void read_dht() {
     do {
       age = (uint32_t)(micros_get() - startTime);
       if (age > 90) {
+        // Timeout Error
         return;
       }
     } while (((PINB & _BV(DHT_PIN)) >> DHT_PIN) == (i & 1));
@@ -43,16 +48,20 @@ void read_dht() {
     }
 
     if (i == 31) {
-      humidity = data;
+      _humidity = data;
     } else if (i == 63) {
-      temperature = data;
+      _temperature = data;
     }
 
   }
 
-  if ((uint8_t)(((uint8_t)humidity) + (humidity >> 8) + ((uint8_t)temperature) + (temperature >> 8)) != (uint8_t)data ) {
+  if ((uint8_t)(((uint8_t)_humidity) + (_humidity >> 8) + ((uint8_t)_temperature) + (_temperature >> 8)) != (uint8_t)data ) {
+    // Checksum Error
     return;
   }
+
+  humidity = _humidity;
+  temperature = _temperature;
 }
 
 void pulse_pin(uint32_t pin) {
