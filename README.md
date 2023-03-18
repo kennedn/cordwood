@@ -1,4 +1,4 @@
-Raspberry Pi raw register access experiments with the [Cordwood soldering puzzle](https://boldport.com/shop/cordwood-puzzle-1)
+Low level experiments with the [Cordwood soldering puzzle](https://boldport.com/shop/cordwood-puzzle-1)
 
 | folders     | simulation | device | description |
 |-------------|------------|--------|-------------|
