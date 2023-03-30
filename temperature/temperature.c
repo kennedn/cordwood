@@ -4,10 +4,11 @@
 #include <util/delay.h>
 #include "micros.h"
 
-#define DHT_PIN PB3
-#define DATA_PIN PB0
+#define ENABLE_PIN PB0
 #define LATCH_PIN PB1
 #define CLOCK_PIN PB2
+#define DHT_PIN PB3
+#define DATA_PIN PB4
 
 uint16_t temperature = 0;
 uint16_t humidity = 0;
@@ -81,7 +82,10 @@ void send_byte(uint8_t bits) {
 }
 
 int main() {
-  DDRB |= _BV(DATA_PIN) | _BV(LATCH_PIN) | _BV(CLOCK_PIN) | _BV(DHT_PIN);  // Set PINS as output
+  DDRB |= _BV(DATA_PIN) | _BV(LATCH_PIN) | _BV(CLOCK_PIN) | 
+          _BV(DHT_PIN) | _BV(ENABLE_PIN);  // Set PINS as output
+  PORTB &= ~_BV(ENABLE_PIN); // Set output enable pin LOW
+
   micros_init();
   while(1){
     read_dht();

@@ -10,7 +10,7 @@ Low level experiments with the [Cordwood soldering puzzle](https://boldport.com/
 
 # Build
 
-## rasp pi projects
+## Blink & Shift
 
 ### Compile and Run
 
@@ -24,7 +24,16 @@ gcc ${folder}.c -o ${folder}
 sudo ./${folder}
 ```
 
-## attiny85 projects 
+## Temperature
+
+### Schematic
+
+![](media/temperature_schematic.svg)
+
+### Final build
+
+![](media/temperature.gif)
+![](media/temperature.jpg)
 
 ### Fuse setting
 
