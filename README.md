@@ -32,8 +32,10 @@ sudo ./${folder}
 
 ### Final build
 
-![](media/temperature.gif)
-![](media/temperature.jpg)
+<p align="center">
+    <img src="./media/temperature.gif" width="48%"/>
+    <img src="./media/temperature.jpg" width="48%"/>
+</p>
 
 ### Fuse setting
 
